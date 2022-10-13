@@ -1,4 +1,4 @@
-# Dokkan LR Checklist
+# Dokkan Fest Exclusive Checklist
 Assets are taken from the mobile game 'DBZ Dokkan Battle'.
 
 All rights reserved by &copy; BANDAI NAMCO Entertainment.
