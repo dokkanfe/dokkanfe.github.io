@@ -103,7 +103,7 @@ function countLegends() {
   var total = $("#special .flair").length;
   var disabled = $('.disabled').length;
 
-  $('#counter').html("<span class='cl'>Total LRs - </span>" + amount + "/" + (total-disabled));
+  $('#counter').html("<span class='cl'>Total DFEs - </span>" + amount + "/" + (total-disabled));
 }
 
 //unhides specific Legends
