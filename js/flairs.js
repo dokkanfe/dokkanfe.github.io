@@ -1,6 +1,6 @@
 var xhr = new XMLHttpRequest();
 
-xhr.open("GET", "https://api.github.com/repos/dokkan-dfe/dokkan-dfe.github.io/contents/images/icons?ref=master", true);
+xhr.open("GET", "https://api.github.com/repos/dokkan-dfe/dokkan-dfe.github.io/contents/images/icons?ref=main", true);
 
 xhr.onload = function() {
 	if (xhr.readyState === xhr.DONE) {
