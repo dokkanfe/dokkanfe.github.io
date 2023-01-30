@@ -1,3 +1,21 @@
+//SPECIAL FLAIRS
+loadFlairs = function() {
+  var enter = document.getElementById('special');
+
+  for (i=1; i<=114; i++) {
+    //creates HTML for special flairs
+    var flair_special = document.createElement('img');
+    flair_special.setAttribute('class', 'flair');
+    flair_special.setAttribute('id', i);
+    flair_special.setAttribute('src', 'images/icons/'+i+'.png');
+
+    enter.appendChild(flair_special);
+  }
+}
+
+// <----------------------------------------------------------------->
+
+// updates local storage values
 function updateStorage(key, value, save) {
   if (save) {
     localStorage.setItem(key, value);
@@ -7,10 +25,12 @@ function updateStorage(key, value, save) {
   }
 }
 
+// reads local storage based on key
 function readStorageValue(key) {
   return localStorage.getItem(key);
 }
 
+// reads entire local storage array
 function readAllStorage() {
   const nbItem = localStorage.length;
   const store = [];
@@ -26,6 +46,7 @@ function readAllStorage() {
   return store;
 }
 
+// reads storage and updates the page accordingly
 function updatePage() {
   //check local storage
   const store = readAllStorage();
@@ -43,10 +64,10 @@ function updatePage() {
   });
 }
 
+// select all icons on page
 function selectPage() {
     //adds selected class to every icon
     $("#special .flair:not(.disabled)").addClass("selected");
-
 
   var className = document.getElementsByClassName('selected');
   var idStore = new Array();
@@ -63,6 +84,7 @@ function selectPage() {
     }
 }
 
+// remove all selections on page
 function resetPage() {
   //check local storage
   const store = readAllStorage();
@@ -81,7 +103,7 @@ function countLegends() {
   var total = $("#special .flair").length;
   var disabled = $('.disabled').length;
 
-  $('#counter').html("<span class='cl'>Total DFEs - </span>" + amount + "/" + (total-disabled));
+  $('#counter').html("<span class='cl'>Total LRs - </span>" + amount + "/" + (total-disabled));
 }
 
 //unhides specific Legends
@@ -262,7 +284,11 @@ function importSelection() {
   countLegends();
 }
 
-jQuery(document).ready(function($) {
+// on page load
+$(document).ready(function() {
+  // generate icons
+  loadFlairs();
+
   //restore previous state
   updatePage();
 
@@ -270,12 +296,12 @@ jQuery(document).ready(function($) {
   countLegends();
 
   //main function for selecting icons
-  $("#special img").mousedown(function(e) {
+  $("#special").on("click", "img", function(e) {
     var isChecked = document.getElementById('hide-lr').checked;
 
     const $obj = $(this);
 
-    //hide DFEs toggle
+    //hide LRs toggle
     if(isChecked){
       $obj.toggleClass("disabled");
       $obj.removeClass("selected");
