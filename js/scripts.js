@@ -2,7 +2,7 @@
 loadFlairs = function() {
   var enter = document.getElementById('special');
 
-  for (i=1; i<=114; i++) {
+  for (i=1; i<=104; i++) {
     //creates HTML for special flairs
     var flair_special = document.createElement('img');
     flair_special.setAttribute('class', 'flair');
