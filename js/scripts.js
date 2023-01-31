@@ -2,7 +2,8 @@
 loadFlairs = function() {
   var enter = document.getElementById('special');
 
-  for (i=1; i<=104; i++) {
+  // length variable from fetch API below
+  for (i=1; i<=total; i++) {
     //creates HTML for special flairs
     var flair_special = document.createElement('img');
     flair_special.setAttribute('class', 'flair');
@@ -286,14 +287,21 @@ function importSelection() {
 
 // on page load
 $(document).ready(function() {
-  // generate icons
-  loadFlairs();
 
-  //restore previous state
-  updatePage();
+  fetch('https://api.github.com/repos/dokkanfe/dokkanfe.github.io/contents/images/icons?ref=main')
+  .then(response => response.json()) // convert API to json format
+  .then(function (response) {
+    total = Object.values(response).length;
 
-  //legend counter
-  countLegends();
+    // generate icons
+    loadFlairs();
+
+    //restore previous state
+    updatePage();
+
+    //legend counter
+    countLegends();
+  });
 
   //main function for selecting icons
   $("#special").on("click", "img", function(e) {
