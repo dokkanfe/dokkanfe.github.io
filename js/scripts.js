@@ -278,6 +278,10 @@ function importSelection() {
     $('#undefined').fadeIn().delay(1000).fadeOut();
   }
 
+  coreFunctions();
+}
+
+function coreFunctions() {
   //restore previous state
   updatePage();
 
@@ -296,11 +300,7 @@ $(document).ready(function() {
     // generate icons
     loadFlairs();
 
-    //restore previous state
-    updatePage();
-
-    //legend counter
-    countLegends();
+    coreFunctions();
   });
 
   //main function for selecting icons
