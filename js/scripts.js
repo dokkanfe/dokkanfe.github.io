@@ -109,7 +109,7 @@ function countLegends() {
 
 //unhides specific Legends
 function listHidden() {
-  toggleModal2();
+  toggleModal('removed-modal');
   $(".modal-content2").empty();
   $("#hide-lr").prop("checked", false);
 
@@ -142,55 +142,23 @@ function listHidden() {
 }
 
 //toggles popup window
-function toggleModal() {
+function toggleModal(e) {
+  let modal = document.querySelector("#"+e);
+  let closeBtn = document.querySelector("#"+e+" .close-btn")
 
-  let modal = document.querySelector(".modal")
-  let closeBtn = document.querySelector(".close-btn")
-
-  modal.style.display = "block"
+  modal.style.visibility = "visible";
+  modal.style.opacity = "100";
 
   closeBtn.onclick = function(){
-    modal.style.display = "none"
+    modal.style.visibility = "hidden";
+    modal.style.opacity = "0";
+    $('#import-text').val('');
   }
   window.onclick = function(e){
     if(e.target == modal){
-      modal.style.display = "none"
-    }
-  }
-}
-
-//toggles 2nd popup window
-function toggleModal2() {
-
-  let modal = document.querySelector(".modal2")
-  let closeBtn = document.querySelector(".close-btn2")
-
-  modal.style.display = "block"
-
-  closeBtn.onclick = function(){
-    modal.style.display = "none"
-  }
-  window.onclick = function(e){
-    if(e.target == modal){
-      modal.style.display = "none"
-    }
-  }
-}
-
-//toggles 3rd popup window
-function toggleModal3() {
-
-  let modal = document.querySelector(".modal3")
-  let closeBtn = document.querySelector(".close-btn3")
-
-  modal.style.display = "block"
-
-  closeBtn.onclick = function(){
-    modal.style.display = "none"
-  }
-  window.onclick = function(e){
-    if(e.target == modal){
-      modal.style.display = "none"
+      modal.style.visibility = "hidden";
+      modal.style.opacity = "0";
+      $('#import-text').val('');
     }
   }
 }
@@ -204,7 +172,7 @@ function windowOnClick(event) {
 
 //export image function
 function generateImage() {
-  toggleModal();
+  toggleModal('image-modal');
 
   $(".modal-content").empty();
 
@@ -215,7 +183,6 @@ function generateImage() {
   });
 }
 
-
 //download feature
 function download() {
   domtoimage.toBlob($('.icon-container')[0]).then(function (blob) {
@@ -225,9 +192,6 @@ function download() {
 
 //export localStorage
 function exportSelection() {
-  $('#import-text').attr("style", "opacity: 0; z-index: -1;");
-  $('#apply-import').attr("style", "opacity: 0; z-index: -1;");
-  $('#copy-export').attr("style", "opacity: 1; z-index: 1;");
   var raw = JSON.stringify(localStorage);
   container = document.getElementById("export-text");
   container.setAttribute("style", "transform: translateY(0); opacity: 1; z-index: 1;");
@@ -240,14 +204,6 @@ function copySelection() {
   container.select();
   document.execCommand("copy");
   $('#display-copied').fadeIn().delay(1000).fadeOut();
-}
-
-//import button
-function toggleImport() {
-  $('#export-text').attr("style", "opacity: 0; z-index: -1;");
-  $('#copy-export').attr("style", "opacity: 0; z-index: -1;");
-  $('#apply-import').attr("style", "opacity: 1; z-index: 1;");
-  $("#import-text").attr("style", "transform: translateY(0); opacity: 1; z-index: 1;");
 }
 
 //apply imported data
@@ -352,5 +308,33 @@ $(document).ready(function() {
   $("#list-hidden").on("click", function() {
     listHidden();
     countLegends();
+  });
+
+  //generate image window
+  $("#generate").on("click", function() {
+    generateImage();
+    countLegends();
+  });
+
+  //import code window
+  $("#import").on("click", function() {
+    toggleModal('import-modal');
+  });
+
+  //import code button
+  $("#import-btn").on("click", function() {
+    importSelection();
+    countLegends();
+  });
+
+  //export code window
+  $("#export").on("click", function() {
+    toggleModal('export-modal');
+    exportSelection();
+  });
+
+  //copy code button
+  $("#copy-export").on("click", function() {
+    copySelection();
   });
 });
