@@ -176,7 +176,7 @@ function generateImage() {
 
   $(".modal-content").empty();
 
-  domtoimage.toSvg($('.icon-container')[0]).then(function (dataUrl) {
+  domtoimage.toPng($('.icon-container')[0]).then(function (dataUrl) {
           var img = new Image();
           img.src = dataUrl;
           $(".modal-content").append(img);
