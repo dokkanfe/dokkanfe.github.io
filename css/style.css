@@ -319,18 +319,18 @@ height:20px;
 position:absolute;
 top:0;
 left:0;
-width:220px;
+width:200px;
 }
 
 footer div {
 color:#fff;
-line-height:40px;
+line-height:30px;
 font-weight:400;
 font-size:12px;
 }
 
 footer div a {
-color:#b3b3ff;
+color:#ffeb7d;
 }
 
 #hide-legends,button {
