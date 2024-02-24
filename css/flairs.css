@@ -1,6 +1,6 @@
 .flair {
 height:70px;
-width:80px;
+width:79px;
 cursor:pointer;
 border:3px solid transparent;
 background-clip:padding-box;
@@ -14,18 +14,44 @@ display: inline-block;
 
 @media only screen and (min-width: 1921px) {
   .flair {
-    height:80px;
-    width:90px;
+    height:78px;
+    width:89px;
+  }
+  .eza:before {
+    height:18px!important;
+    width:20px!important;
+    right:6px!important;
   }
 }
 
 @media only screen and (max-width: 760px) {
   .flair {
-    height:50px;
-    width:60px;
+    height:48px;
+    width:55px;
+  }
+  .eza:before {
+    height:12px!important;
+    width:13px!important;
+    right:2px!important;
   }
 }
 
 .disabled, .hidden {
   display: none;
+}
+
+.eza:before {
+content:"";
+display:block;
+height: 16px;
+width: 18px;
+background:url(../images/eza.webp);
+position:absolute;
+bottom:0;
+right:4px;
+background-size:contain;
+}
+
+div.eza {
+position:relative;
 }
