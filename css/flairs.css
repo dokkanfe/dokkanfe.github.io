@@ -22,6 +22,11 @@ display: inline-block;
     width:20px!important;
     right:6px!important;
   }
+  .eza2:before {
+    height:24px!important;
+    width:28px!important;
+    right:4px!important;
+  }
 }
 
 @media only screen and (max-width: 760px) {
@@ -32,6 +37,11 @@ display: inline-block;
   .eza:before {
     height:12px!important;
     width:13px!important;
+    right:2px!important;
+  }
+  .eza2:before {
+    height:17px!important;
+    width:20px!important;
     right:2px!important;
   }
 }
@@ -52,6 +62,18 @@ right:4px;
 background-size:contain;
 }
 
-div.eza {
+div.eza, div.eza2 {
 position:relative;
+}
+
+.eza2:before {
+content:"";
+display:block;
+height: 22px;
+width: 26px;
+background:url(../images/eza2.webp);
+position:absolute;
+bottom:-1px;
+right:3px;
+background-size:contain;
 }
