@@ -15,7 +15,7 @@ loadFlairs = function() {
   ]
 
   var eza2 = [
-    3, 4, 13
+    3, 4, 13, 18
   ]
 
   // length variable from fetch API below
