@@ -11,12 +11,38 @@ loadFlairs = function() {
     50,51,52,53,54,55,56,57,58,59,
     60,61,62,63,64,65,66,69,
     70,71,72,73,74,75,
-    87
+    83,87
   ]
 
   var eza2 = [
     3, 4, 13, 18
   ]
+
+  //changelog items
+  const updateItems = [
+  "STR Roshi",
+  "STR Videl EZA"
+  ]
+
+  //changelog date format
+  const options = {year: 'numeric', month: 'long', day: 'numeric'};
+  //update the date to current date when doing updates
+  const d = new Date("2024-08-05");
+
+  //append formatted date
+  $('.changelog h3').append("Last Update: "+d.toLocaleDateString("en-GB", options));
+
+  //changelog HTML selector
+  let changelog = document.getElementById('changelog-item');
+
+  //appends changelog items to the defined HTML element
+  for (i in updateItems) {
+    let node = document.createElement('li');
+    current = updateItems[i];
+
+    node.append(current);
+    changelog.appendChild(node);
+  }
 
   // length variable from fetch API below
   for (i=1; i<=total; i++) {
