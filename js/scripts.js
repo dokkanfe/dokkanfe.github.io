@@ -11,7 +11,7 @@ loadFlairs = function() {
     50,51,52,53,54,55,56,57,58,59,
     60,61,62,63,64,65,66,69,
     70,71,72,73,74,75,
-    83,87
+    81,82,83,87
   ]
 
   var eza2 = [
@@ -20,8 +20,8 @@ loadFlairs = function() {
 
   //changelog items
   const updateItems = [
-  "STR Roshi",
-  "STR Videl EZA"
+  "INT Broly EZA",
+  "PHY Trunks & Goten EZA"
   ]
 
   //changelog date format
