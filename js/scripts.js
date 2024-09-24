@@ -15,19 +15,20 @@ loadFlairs = function() {
   ]
 
   var eza2 = [
-    3, 4, 13, 18
+    1,3, 4, 13, 18
   ]
 
   //changelog items
   const updateItems = [
   "INT Broly EZA",
-  "PHY Trunks & Goten EZA"
+  "PHY Trunks & Goten EZA",
+  "STR Broly Super EZA"
   ]
 
   //changelog date format
   const options = {year: 'numeric', month: 'long', day: 'numeric'};
   //update the date to current date when doing updates
-  const d = new Date("2024-08-05");
+  const d = new Date("2024-09-24");
 
   //append formatted date
   $('.changelog h3').append("Last Update: "+d.toLocaleDateString("en-GB", options));
