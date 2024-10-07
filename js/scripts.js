@@ -15,14 +15,13 @@ loadFlairs = function() {
   ]
 
   var eza2 = [
-    1,3, 4, 13, 18
+    1,3, 4, 7, 13, 18
   ]
 
   //changelog items
   const updateItems = [
-  "INT Broly EZA",
-  "PHY Trunks & Goten EZA",
-  "STR Broly Super EZA"
+  "PHY FP Frieza EZA",
+  "AGL Vegeta"
   ]
 
   //changelog date format
