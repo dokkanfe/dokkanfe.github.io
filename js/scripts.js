@@ -20,14 +20,13 @@ loadFlairs = function() {
 
   //changelog items
   const updateItems = [
-  "PHY FP Frieza EZA",
-  "AGL Vegeta"
+  "STR Slug"
   ]
 
   //changelog date format
   const options = {year: 'numeric', month: 'long', day: 'numeric'};
   //update the date to current date when doing updates
-  const d = new Date("2024-09-24");
+  const d = new Date("2024-11-04");
 
   //append formatted date
   $('.changelog h3').append("Last Update: "+d.toLocaleDateString("en-GB", options));
