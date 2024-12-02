@@ -9,7 +9,7 @@ loadFlairs = function() {
     30,31,32,33,34,35,36,37,38,39,
     40,41,42,43,44,45,46,47,48,49,
     50,51,52,53,54,55,56,57,58,59,
-    60,61,62,63,64,65,66,69,
+    60,61,62,63,64,65,66,67,68,69,
     70,71,72,73,74,75,78,
     81,82,83,87
   ]
@@ -21,13 +21,15 @@ loadFlairs = function() {
   //changelog items
   const updateItems = [
   "INT Gohan Super EZA",
-  "TEQ Buuhan"
+  "TEQ Buuhan",
+  "INT SSJ2 Angel Goku EZA",
+  "TEQ SSJ2 Vegeta EZA"
   ]
 
   //changelog date format
   const options = {year: 'numeric', month: 'long', day: 'numeric'};
   //update the date to current date when doing updates
-  const d = new Date("2024-11-29");
+  const d = new Date("2024-12-02");
 
   //append formatted date
   $('.changelog h3').append("Last Update: "+d.toLocaleDateString("en-GB", options));
