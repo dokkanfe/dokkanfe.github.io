@@ -43,7 +43,7 @@ loadFlairs = function() {
       const latestCommitDate = commits[0].commit.committer.date;
       const formattedDate = new Date(latestCommitDate).toLocaleDateString("en-GB", {
         year: 'numeric',
-        month: 'long',
+        month: 'short',
         day: 'numeric'
       });
 
