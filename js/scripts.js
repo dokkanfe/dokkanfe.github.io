@@ -26,48 +26,59 @@ loadFlairs = function() {
   "TEQ SSJ2 Vegeta EZA"
   ]
 
-  //changelog date format
-  const options = {year: 'numeric', month: 'long', day: 'numeric'};
-  //update the date to current date when doing updates
-  const d = new Date("2024-12-02");
+  // Append changelog items
+  const changelog = document.getElementById('changelog-item');
+  updateItems.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    changelog.appendChild(listItem);
+  });
 
-  //append formatted date
-  $('.changelog h3').append("Last Update: "+d.toLocaleDateString("en-GB", options));
+  // Fetch the latest commit date from GitHub API
+  const fetchLatestCommitDate = async () => {
+    try {
+      const response = await fetch('https://api.github.com/repos/dokkanlr/dokkanlr.github.io/commits');
+      if (!response.ok) throw new Error('Failed to fetch commit data');
+      const commits = await response.json();
 
-  //changelog HTML selector
-  let changelog = document.getElementById('changelog-item');
+      // Get the date of the latest commit
+      const latestCommitDate = commits[0].commit.committer.date;
+      const formattedDate = new Date(latestCommitDate).toLocaleDateString("en-GB", {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
 
-  //appends changelog items to the defined HTML element
-  for (i in updateItems) {
-    let node = document.createElement('li');
-    current = updateItems[i];
+      // Update the changelog date dynamically
+      document.querySelector('.changelog h3').textContent = `Last Update: ${formattedDate}`;
+    } catch (error) {
+      console.error('Error fetching the latest commit date:', error);
+    }
+  };
 
-    node.append(current);
-    changelog.appendChild(node);
+  // Call the function during initialization
+  fetchLatestCommitDate();
+
+  // Append changelog items
+  const changelog = document.getElementById('changelog-item');
+  updateItems.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    changelog.appendChild(listItem);
+  });
+
+  // Create special flairs dynamically
+  for (let i = 1; i <= total; i++) {
+    const flairSpecial = document.createElement('div');
+    flairSpecial.className = 'flair';
+    flairSpecial.id = i;
+    flairSpecial.style.backgroundImage = `url(../images/icons/${i}.webp)`;
+    enter.appendChild(flairSpecial);
   }
 
-  // length variable from fetch API below
-  for (i=1; i<=total; i++) {
-    //creates HTML for special flairs
-    var flair_special = document.createElement('div');
-    flair_special.setAttribute('class', 'flair');
-    flair_special.setAttribute('id', i);
-    flair_special.style.backgroundImage='url(../images/icons/'+i+'.webp)';
-
-    enter.appendChild(flair_special);
-  }
-
-  //assigns EZA class based on array
-  for (i in eza) {
-    current = eza[i];
-    $("#"+current).attr('class', 'flair eza');
-  }
-
-  //assigns SUPER EZA class based on array
-  for (i in eza2) {
-    current = eza2[i];
-    $("#"+current).attr('class', 'flair eza2');
-  }
+  // Assign EZA and SUPER EZA classes
+  eza.forEach(id => document.getElementById(id)?.classList.add('eza'));
+  eza2.forEach(id => document.getElementById(id)?.classList.add('eza2'));
 }
 
 // <----------------------------------------------------------------->
