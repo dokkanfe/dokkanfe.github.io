@@ -20,10 +20,8 @@ loadFlairs = function() {
 
   //changelog items
   const updateItems = [
-  "INT Gohan Super EZA",
-  "TEQ Buuhan",
-  "INT SSJ2 Angel Goku EZA",
-  "TEQ SSJ2 Vegeta EZA"
+  "INT SSJ Goku Mini",
+  "PHY Glorio"
   ]
 
   // Append changelog items
@@ -58,14 +56,6 @@ loadFlairs = function() {
 
   // Call the function during initialization
   fetchLatestCommitDate();
-
-  // Append changelog items
-  const changelog = document.getElementById('changelog-item');
-  updateItems.forEach(item => {
-    const listItem = document.createElement('li');
-    listItem.textContent = item;
-    changelog.appendChild(listItem);
-  });
 
   // Create special flairs dynamically
   for (let i = 1; i <= total; i++) {
