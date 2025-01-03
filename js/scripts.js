@@ -35,7 +35,7 @@ loadFlairs = function() {
   // Fetch the latest commit date from GitHub API
   const fetchLatestCommitDate = async () => {
     try {
-      const response = await fetch('https://api.github.com/repos/dokkanlr/dokkanlr.github.io/commits');
+      const response = await fetch('https://api.github.com/repos/dokkanfe/dokkanfe.github.io/commits');
       if (!response.ok) throw new Error('Failed to fetch commit data');
       const commits = await response.json();
 
