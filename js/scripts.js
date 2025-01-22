@@ -16,15 +16,13 @@ loadFlairs = function() {
   ]
 
   var eza2 = [
-    1,3, 4, 7, 8, 10, 13, 18
+    1,3, 4, 7, 8, 10, 11, 13, 15, 18
   ]
 
   //changelog items
   const updateItems = [
-  "INT SSJ Goku Mini",
-  "PHY Glorio",
-  "PHY SSJ2 Goku EZA",
-  "STR Kid Buu EZA"
+  "AGL Super Vegito Super EZA",
+  "INT Buuhan Super EZA",
   ]
 
   // Append changelog items
