@@ -16,7 +16,7 @@ loadFlairs = function() {
   ]
 
   var eza2 = [
-    1,3, 4, 5, 6, 7, 8, 10, 11, 13, 15, 18
+    1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 15, 18
   ]
 
   //changelog items
@@ -24,7 +24,8 @@ loadFlairs = function() {
   "AGL Super Vegito Super EZA",
   "INT Buuhan Super EZA",
   "STR Gogeta Super EZA",
-  "INT Janemba Super EZA"
+  "INT Janemba Super EZA",
+  "TEQ Cell Super EZA"
   ]
 
   // Append changelog items
