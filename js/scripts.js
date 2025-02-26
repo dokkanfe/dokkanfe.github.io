@@ -21,11 +21,7 @@ loadFlairs = function() {
 
   //changelog items
   const updateItems = [
-  "AGL Super Vegito Super EZA",
-  "INT Buuhan Super EZA",
-  "STR Gogeta Super EZA",
-  "INT Janemba Super EZA",
-  "TEQ Cell Super EZA"
+    "Checklist retired"
   ]
 
   // Append changelog items
@@ -71,17 +67,17 @@ loadFlairs = function() {
   fetchLatestCommitDate();
 
   // Create special flairs dynamically
-  for (let i = 1; i <= total; i++) {
-    const flairSpecial = document.createElement('div');
-    flairSpecial.className = 'flair';
-    flairSpecial.id = i;
-    flairSpecial.style.backgroundImage = `url(../images/icons/${i}.webp)`;
-    enter.appendChild(flairSpecial);
-  }
-
-  // Assign EZA and SUPER EZA classes
-  eza.forEach(id => document.getElementById(id)?.classList.add('eza'));
-  eza2.forEach(id => document.getElementById(id)?.classList.add('eza2'));
+  // for (let i = 1; i <= total; i++) {
+  //   const flairSpecial = document.createElement('div');
+  //   flairSpecial.className = 'flair';
+  //   flairSpecial.id = i;
+  //   flairSpecial.style.backgroundImage = `url(../images/icons/${i}.webp)`;
+  //   enter.appendChild(flairSpecial);
+  // }
+  //
+  // // Assign EZA and SUPER EZA classes
+  // eza.forEach(id => document.getElementById(id)?.classList.add('eza'));
+  // eza2.forEach(id => document.getElementById(id)?.classList.add('eza2'));
 }
 
 // <----------------------------------------------------------------->
